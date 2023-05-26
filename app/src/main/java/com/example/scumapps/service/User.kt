@@ -1,4 +1,4 @@
-package com.example.scumapps.serice
+package com.example.scumapps.service
 
 data class User(
     val name: String? = null,
