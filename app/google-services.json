@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "968599545159",
+    "project_id": "scum-apps",
+    "storage_bucket": "scum-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968599545159:android:57d89e02d3e75254549862",
+        "android_client_info": {
+          "package_name": "com.example.scumapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968599545159-fnvume0820s0a5989e55bf6ac81ooufr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9rsJQDfexlHOU9qqBSqe6AqtavP0ImkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968599545159-fnvume0820s0a5989e55bf6ac81ooufr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
