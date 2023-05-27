@@ -75,9 +75,11 @@ class RegisterFragment : Fragment() {
                 val email: String = editTextEmail?.text.toString()
                 val password: String = editTextPassword?.text.toString()
 
+                showLoading(true)
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
+                            showLoading(false)
                             val userUpdateProfile = userProfileChangeRequest {
                                 displayName = name
                             }
@@ -93,6 +95,7 @@ class RegisterFragment : Fragment() {
                         }
                     }
                     .addOnFailureListener{error2 ->
+                        showLoading(false)
                         Toast.makeText(
                             activity,
                             "Authentication failed.",
@@ -110,6 +113,15 @@ class RegisterFragment : Fragment() {
             btnToLogin.setOnClickListener {
                 findNavController().navigateUp()
             }
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        }
+        else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 

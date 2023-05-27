@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.scumapps.R
 import com.example.scumapps.ui.AuthenticationActivity
 import com.example.scumapps.databinding.FragmentProfileBinding
 import com.example.scumapps.ui.login.LoginFragment
@@ -48,7 +50,9 @@ class ProfileFragment : Fragment() {
 
         binding.logoutBtn.setOnClickListener{
             auth.signOut()
-            startActivity(Intent(activity, AuthenticationActivity::class.java))
+            startActivity(Intent(activity, AuthenticationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            requireActivity().finish()
+            Toast.makeText(requireContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show()
         }
     }
 

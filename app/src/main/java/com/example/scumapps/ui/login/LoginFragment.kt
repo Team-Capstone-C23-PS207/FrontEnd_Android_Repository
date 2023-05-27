@@ -75,13 +75,18 @@ class LoginFragment : Fragment() {
                 val email: String = editTextEmail?.text.toString()
                 val password: String = editTextPassword?.text.toString()
 
+                showLoading(true)
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener(requireActivity()) {
+                        showLoading(false)
                         val intent = Intent(activity, HomeActivity::class.java)
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         startActivity(intent)
                         requireActivity().finish()
+                        Toast.makeText(activity, "Login Success", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener{error ->
+                        showLoading(false)
                         Toast.makeText(
                             activity,
                             error.localizedMessage,
@@ -100,6 +105,15 @@ class LoginFragment : Fragment() {
             }
 
             btnToRegister.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registerFragment))
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        }
+        else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 

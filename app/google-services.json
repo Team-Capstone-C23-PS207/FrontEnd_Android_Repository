@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "968599545159-88r635c205h0sh32fr9akvqvetlk2ld1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.scumapps",
+            "certificate_hash": "3cbe1223d0e7cb54954c289acf92ecf4497b179f"
+          }
+        },
+        {
           "client_id": "968599545159-fnvume0820s0a5989e55bf6ac81ooufr.apps.googleusercontent.com",
           "client_type": 3
         }
