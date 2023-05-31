@@ -21,4 +21,5 @@
     <string name="backhome">Back To Home</string>
     <string name="cara">Cara Mengolah :</string>
     <string name="logout_success">You have been successfully logout. Back to login page</string>
+    <string name="add_picture_warn">" Please add the image file first."</string>
 </resources>

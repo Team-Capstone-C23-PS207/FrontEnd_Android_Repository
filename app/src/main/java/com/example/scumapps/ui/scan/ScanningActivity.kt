@@ -3,28 +3,50 @@ package com.example.scumapps.ui.scan
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.example.scumapps.ui.HomeActivity
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.drawable.toBitmap
 import com.example.scumapps.R
 import com.example.scumapps.databinding.ActivityScanningBinding
+import com.example.scumapps.service.ApiConfig
+import com.example.scumapps.service.ScanResponse
+import com.example.scumapps.ui.HomeActivity
 import com.example.scumapps.ui.detail.DetailActivity
 import com.example.scumapps.utils.Utils.Companion.createCustomTempFile
+import com.example.scumapps.utils.Utils.Companion.reduceFileImage
 import com.example.scumapps.utils.Utils.Companion.uriToFile
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.ByteArrayOutputStream
 import java.io.File
 
 class ScanningActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScanningBinding
     private var getFile: File? = null
+    private lateinit var scanningViewModel: ScanningViewModel
+    private lateinit var drawable : Drawable
+    private lateinit var bmp : Bitmap
+    private lateinit var baos : ByteArrayOutputStream
+    private lateinit var byteArr : ByteArray
+    private var isBitmap : Boolean = false
 
     private lateinit var currentPhotoPath: String
     private val launcherIntentCamera = registerForActivityResult(
@@ -34,8 +56,10 @@ class ScanningActivity : AppCompatActivity() {
             val myFile = File(currentPhotoPath)
             getFile = myFile
             val result = BitmapFactory.decodeFile(getFile?.path)
-
+            DetailActivity.IMAGEBITMAP = result
             binding.previewImageView.setImageBitmap(result)
+            isBitmap = true
+            uploadImage()
         }
     }
 
@@ -46,7 +70,10 @@ class ScanningActivity : AppCompatActivity() {
             val selectedImg: Uri = result.data?.data as Uri
             val myFile = uriToFile(selectedImg, this@ScanningActivity)
             getFile = myFile
+            DetailActivity.IMAGEURI = selectedImg
             binding.previewImageView.setImageURI(selectedImg)
+            isBitmap = false
+            uploadImage()
         }
     }
 
@@ -91,7 +118,10 @@ class ScanningActivity : AppCompatActivity() {
         }
 
         binding.nextButton.setOnClickListener {
-            startActivity(Intent(this@ScanningActivity, DetailActivity::class.java))
+
+            startActivity(Intent(this@ScanningActivity, DetailActivity::class.java)
+                .putExtra("waste", binding.wasteType.text)
+                .putExtra("type", isBitmap))
         }
 
         binding.cameraButton.setOnClickListener {
@@ -101,6 +131,7 @@ class ScanningActivity : AppCompatActivity() {
         binding.galleryButton.setOnClickListener {
             openGallery()
         }
+
     }
 
     private fun openGallery() {
@@ -127,8 +158,57 @@ class ScanningActivity : AppCompatActivity() {
         }
     }
 
+    private fun uploadImage() {
+        if (getFile != null) {
+            val file = reduceFileImage(getFile as File)
+
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "image",
+                file.name,
+                requestImageFile
+            )
+
+            uploadImageApi(imageMultipart)
+
+        }
+        else {
+            binding.wasteType.text = "not found"
+        }
+    }
+    private fun uploadImageApi(img: MultipartBody.Part) {
+        val client = ApiConfig.getApiService().uploadPicture(img)
+        client.enqueue(object : Callback<ScanResponse> {
+            override fun onResponse(
+                call: Call<ScanResponse>,
+                response: Response<ScanResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        binding.wasteType.text = responseBody.result
+                    }
+                } else {
+                    Log.e(TAG, "onFailure: data not found")
+                }
+            }
+
+            override fun onFailure(call: Call<ScanResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: image failed to upload")
+            }
+        })
+    }
+
+    private fun convertToByteArr() {
+        drawable = binding.previewImageView.drawable
+        bmp = drawable.toBitmap()
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, baos)
+        byteArr = baos.toByteArray()
+    }
+
     companion object {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
+        private const val TAG = "ScanningActivity"
     }
 }

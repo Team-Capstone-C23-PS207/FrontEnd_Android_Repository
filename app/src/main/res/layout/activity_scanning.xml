@@ -19,27 +19,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_place_holder" />
 
+    <TextView
+        android:id="@+id/waste_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="waste"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/previewImageView"/>
+
     <Button
         android:id="@+id/cameraButton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:text="@string/camera"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previewImageView"
+        app:layout_constraintTop_toBottomOf="@id/waste_type"
         app:layout_constraintEnd_toStartOf="@id/galleryButton"/>
 
     <Button
         android:id="@+id/galleryButton"
         android:layout_width="110dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:text="@string/gallery"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cameraButton"
-        app:layout_constraintTop_toBottomOf="@id/previewImageView" />
+        app:layout_constraintTop_toBottomOf="@id/waste_type" />
 
     <Button
         android:id="@+id/backButton"
