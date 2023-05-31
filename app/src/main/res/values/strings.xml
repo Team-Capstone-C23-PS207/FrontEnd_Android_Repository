@@ -21,5 +21,8 @@
     <string name="backhome">Back To Home</string>
     <string name="cara">Cara Mengolah :</string>
     <string name="logout_success">You have been successfully logout. Back to login page</string>
-    <string name="add_picture_warn">" Please add the image file first."</string>
+    <string name="add_picture_warn">"Please add the image file first."</string>
+    <string name="PET">PET adalah singkatan dari Polyethylene Terephthalate, Plastik ini digunakan untuk membuat wadah paling umum di pasar minuman ringan saat ini, yaitu botol plastik. Sampah jenis PET bisa didaur ulang dan biasa digunakan untuk kemasan minuman ringan berkarbonasi, air kemasan, susu, jus, minuman olahraga dan energi, toples, punnets, bak dan nampan untuk makanan, botol untuk rumah tangga, produk perawatan pribadi, dan lembaran dan film untuk kemasan, PET adalah jenis plastik berlabel kode # 1 di atas atau di dekat dasar botol dan wadah.</string>
+    <string name="Glass">Glass adalah limbah yang berbahan kaca dan berasal dari penggunaan pada kegiatan sehari-hari, baik di industri maupun kegiatan lainnya.Limbah botol kaca, banyak dijumlah di lingkungan sekitar, dapat berasal dari konsumsi minuman, saus, selai, atau kecap. Limbah tersebut merupakan material yang secara alami tidak dapat didaur ulang.</string>
+    <string name="AluCan">Aluminium Can atau Kaleng merupakan salah satu sampah anorganik yang perlu didaur ulang. Kaleng sering digunakan untuk mengemas makanan, minuman, atau produk lain.</string>
 </resources>

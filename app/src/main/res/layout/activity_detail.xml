@@ -26,7 +26,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -44,9 +44,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:textColor="@color/black"
-                android:text="Sampah botol plastik adalah bahan padat dari kegiatan manusia yang sudah tidak dipakai. Sampah botol plastik tidak dapat terurai oleh tanah. Sampah botol plastik memiliki nilai ekonomi yang tinggi untuk kalangan masyarakat apabila masyarakat dapat mengolahnya menjadi bahan daur ulang."/>
+                android:text="@string/PET"/>
 
         </LinearLayout>
 

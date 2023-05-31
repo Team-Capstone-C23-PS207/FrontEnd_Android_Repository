@@ -47,6 +47,7 @@ class ScanningActivity : AppCompatActivity() {
     private lateinit var baos : ByteArrayOutputStream
     private lateinit var byteArr : ByteArray
     private var isBitmap : Boolean = false
+    private var isTaken : Boolean = false
 
     private lateinit var currentPhotoPath: String
     private val launcherIntentCamera = registerForActivityResult(
@@ -59,6 +60,7 @@ class ScanningActivity : AppCompatActivity() {
             DetailActivity.IMAGEBITMAP = result
             binding.previewImageView.setImageBitmap(result)
             isBitmap = true
+            isTaken = true
             uploadImage()
         }
     }
@@ -73,6 +75,7 @@ class ScanningActivity : AppCompatActivity() {
             DetailActivity.IMAGEURI = selectedImg
             binding.previewImageView.setImageURI(selectedImg)
             isBitmap = false
+            isTaken = true
             uploadImage()
         }
     }
@@ -118,10 +121,15 @@ class ScanningActivity : AppCompatActivity() {
         }
 
         binding.nextButton.setOnClickListener {
+            if (isTaken) {
+                startActivity(Intent(this@ScanningActivity, DetailActivity::class.java)
+                    .putExtra("waste", binding.wasteType.text)
+                    .putExtra("type", isBitmap))
+            }
+            else {
+                Toast.makeText(this, getString(R.string.add_picture_warn), Toast.LENGTH_SHORT).show()
+            }
 
-            startActivity(Intent(this@ScanningActivity, DetailActivity::class.java)
-                .putExtra("waste", binding.wasteType.text)
-                .putExtra("type", isBitmap))
         }
 
         binding.cameraButton.setOnClickListener {
