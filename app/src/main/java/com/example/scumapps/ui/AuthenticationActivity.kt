@@ -1,7 +1,7 @@
 package com.example.scumapps.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.scumapps.R
 
 class AuthenticationActivity : AppCompatActivity() {

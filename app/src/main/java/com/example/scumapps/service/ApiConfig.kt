@@ -1,10 +1,10 @@
 package com.example.scumapps.service
 
+import com.example.scumapps.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import com.example.scumapps.BuildConfig
 
 class ApiConfig {
     companion object {

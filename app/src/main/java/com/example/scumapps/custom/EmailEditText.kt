@@ -7,8 +7,6 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.Patterns
-import androidx.core.content.ContextCompat
-import com.example.scumapps.R
 import com.example.scumapps.utils.Utils
 import com.google.android.material.textfield.TextInputEditText
 

@@ -3,12 +3,12 @@ package com.example.scumapps.ui.register
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.scumapps.R
 import com.example.scumapps.databinding.FragmentRegisterBinding

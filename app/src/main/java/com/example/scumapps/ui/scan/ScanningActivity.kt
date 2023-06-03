@@ -3,14 +3,10 @@ package com.example.scumapps.ui.scan
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -18,13 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.graphics.createBitmap
-import androidx.core.graphics.drawable.toBitmap
-import androidx.lifecycle.ViewModelProvider
 import com.example.scumapps.R
 import com.example.scumapps.databinding.ActivityScanningBinding
-import com.example.scumapps.service.ApiConfig
-import com.example.scumapps.service.ScanResponse
 import com.example.scumapps.ui.HomeActivity
 import com.example.scumapps.ui.detail.DetailActivity
 import com.example.scumapps.utils.Utils.Companion.createCustomTempFile
@@ -33,10 +24,6 @@ import com.example.scumapps.utils.Utils.Companion.uriToFile
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.io.ByteArrayOutputStream
 import java.io.File
 
 class ScanningActivity : AppCompatActivity() {

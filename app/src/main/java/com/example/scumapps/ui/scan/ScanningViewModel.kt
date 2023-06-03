@@ -1,15 +1,12 @@
 package com.example.scumapps.ui.scan
 
-import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.scumapps.service.ApiConfig
 import com.example.scumapps.service.ScanResponse
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
