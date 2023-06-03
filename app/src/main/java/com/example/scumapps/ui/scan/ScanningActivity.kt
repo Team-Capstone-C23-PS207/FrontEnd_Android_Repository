@@ -13,12 +13,14 @@ import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toBitmap
+import androidx.lifecycle.ViewModelProvider
 import com.example.scumapps.R
 import com.example.scumapps.databinding.ActivityScanningBinding
 import com.example.scumapps.service.ApiConfig
@@ -41,11 +43,7 @@ class ScanningActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScanningBinding
     private var getFile: File? = null
-    private lateinit var scanningViewModel: ScanningViewModel
-    private lateinit var drawable : Drawable
-    private lateinit var bmp : Bitmap
-    private lateinit var baos : ByteArrayOutputStream
-    private lateinit var byteArr : ByteArray
+    private val scanningViewModel: ScanningViewModel by viewModels()
     private var isBitmap : Boolean = false
     private var isTaken : Boolean = false
 
@@ -177,41 +175,15 @@ class ScanningActivity : AppCompatActivity() {
                 requestImageFile
             )
 
-            uploadImageApi(imageMultipart)
+            scanningViewModel.wasteType.observe(this) {
+                binding.wasteType.text = it.toString()
+            }
+            scanningViewModel.uploadImageApi(imageMultipart)
 
         }
         else {
             binding.wasteType.text = "not found"
         }
-    }
-    private fun uploadImageApi(img: MultipartBody.Part) {
-        val client = ApiConfig.getApiService().uploadPicture(img)
-        client.enqueue(object : Callback<ScanResponse> {
-            override fun onResponse(
-                call: Call<ScanResponse>,
-                response: Response<ScanResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body()
-                    if (responseBody != null) {
-                        binding.wasteType.text = responseBody.result
-                    }
-                } else {
-                    Log.e(TAG, "onFailure: data not found")
-                }
-            }
-
-            override fun onFailure(call: Call<ScanResponse>, t: Throwable) {
-                Log.e(TAG, "onFailure: image failed to upload")
-            }
-        })
-    }
-
-    private fun convertToByteArr() {
-        drawable = binding.previewImageView.drawable
-        bmp = drawable.toBitmap()
-        bmp.compress(Bitmap.CompressFormat.PNG, 100, baos)
-        byteArr = baos.toByteArray()
     }
 
     companion object {
