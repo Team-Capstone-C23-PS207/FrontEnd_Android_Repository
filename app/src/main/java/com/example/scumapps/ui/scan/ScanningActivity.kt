@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -109,7 +110,8 @@ class ScanningActivity : AppCompatActivity() {
             if (isTaken) {
                 startActivity(Intent(this@ScanningActivity, DetailActivity::class.java)
                     .putExtra("waste", binding.wasteType.text)
-                    .putExtra("type", isBitmap))
+                    .putExtra("type", isBitmap)
+                    .putExtra("File", getFile))
             }
             else {
                 Toast.makeText(this, getString(R.string.add_picture_warn), Toast.LENGTH_SHORT).show()
@@ -165,6 +167,10 @@ class ScanningActivity : AppCompatActivity() {
             scanningViewModel.wasteType.observe(this) {
                 binding.wasteType.text = it.toString()
             }
+
+            scanningViewModel.isLoading.observe(this) {
+                showLoading(it)
+            }
             scanningViewModel.uploadImageApi(imageMultipart)
 
         }
@@ -172,6 +178,8 @@ class ScanningActivity : AppCompatActivity() {
             binding.wasteType.text = "not found"
         }
     }
+
+    private fun showLoading(state: Boolean) { binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE }
 
     companion object {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)

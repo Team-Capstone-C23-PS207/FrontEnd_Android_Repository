@@ -36,6 +36,7 @@ class LoginFragment : Fragment() {
         if (auth.currentUser != null){
             val intentAutoLogin = Intent(activity, HomeActivity::class.java)
             startActivity(intentAutoLogin)
+            requireActivity().finish()
         }
     }
 
