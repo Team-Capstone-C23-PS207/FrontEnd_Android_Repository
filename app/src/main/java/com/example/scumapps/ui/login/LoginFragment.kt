@@ -44,7 +44,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -94,17 +93,7 @@ class LoginFragment : Fragment() {
                             Toast.LENGTH_SHORT,
                         ).show()
                     }
-
-                //Toast.makeText(activity,"LOGIN",Toast.LENGTH_SHORT).show()
-                //val email = editTextEmail?.text
-                //val password = editTextPassword?.text
-
-                //val user = User(
-                //    email = email.toString(), password = password.toString()
-                //)
-                //loginViewModel.login(user)
             }
-
             btnToRegister.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registerFragment))
         }
     }

@@ -27,8 +27,6 @@ class RegisterFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
-    //private val TAG = "RegisterFragment"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -103,11 +101,6 @@ class RegisterFragment : Fragment() {
                         ).show()
 
                     }
-
-                //val user = User(name, email, password)
-                //registerViewModel.register(user)
-
-                //registerFirebase(name, email, password)
             }
 
             btnToLogin.setOnClickListener {
@@ -140,8 +133,6 @@ class RegisterFragment : Fragment() {
     }
 
     private fun playAnimation() {
-        //val width = requireActivity().dpToPx(requireActivity().getScreenWidth())
-
         ObjectAnimator.ofFloat(binding.ivAppRegister, View.TRANSLATION_X, -30f, 30f).apply {
             duration = 6000
             repeatCount = ObjectAnimator.INFINITE

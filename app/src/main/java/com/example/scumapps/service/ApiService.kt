@@ -10,9 +10,4 @@ interface ApiService {
     fun uploadPicture(
         @Part image: MultipartBody.Part
     ): Call<ScanResponse>
-
-//    @GET("/{waste}")
-//    fun getReccomendation(
-//        @Path("waste") waste: String
-//    ): Call<>
 }
