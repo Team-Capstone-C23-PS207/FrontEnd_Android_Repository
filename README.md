@@ -1,7 +1,7 @@
 # Android
 <h3>About the Project</h3>
 
-**Scum Recycle** is waste type detection application that uses a camera to take pictures of waste and detect which type of waste is it. The application will provide information and recommend how to process the waste into a craft that has commercial value. This App is built with Native Kotlin.
+**Scum Recycle** is waste type detection application that uses a camera to take pictures of waste and detect the type of waste. This App is built with Native Kotlin. The application will provide information and recommend how to process the waste into a craft that has commercial value. We want to invite people to be able to identify the type of waste with modern method. We also wish that through this project, people will be **able to process waste into handicrafts that have a selling value** which is expected to improve the economy of the community itself and reduce the accumulation of waste. 
 
 # Screenshots
 
