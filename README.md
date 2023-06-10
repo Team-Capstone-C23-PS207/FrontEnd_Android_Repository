@@ -18,6 +18,6 @@
 • **Waste Processing Recomendation** : using Machine Learning technology and algorithm to give recommendation on how to process waste into handicraft that has commercial value
 
 # Links
-• APK File : 
+• APK File : https://drive.google.com/drive/folders/11RADj_PvUzqheP722pY5YVwqqQVfnAzX?usp=sharing
 
 • Mockup Design File : https://www.figma.com/file/bQZLHJaRFdddj9K9ZHWlQ1/Aplikasi-Scan-Sampah-(Team)?type=design&node-id=0%3A1&t=Mnc9yHDeJJdcCYYS-1
