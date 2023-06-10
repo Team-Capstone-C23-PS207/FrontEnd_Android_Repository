@@ -5,7 +5,7 @@
 
 # Screenshots
 <div>
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_login.jpg" alt="Gambar 1" width="250" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_login.jpg" alt="Gambar 1" width="230" height="450" style="display: inline-block;">
   <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_register.jpg" alt="Gambar 2" width="250" height="500" style="display: inline-block;">
   <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_home.jpg" alt="Gambar 3" width="250" height="500" style="display: inline-block;">
   <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_account.jpg" alt="Gambar 4" width="250" height="500" style="display: inline-block;">
