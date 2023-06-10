@@ -6,14 +6,14 @@
 # Screenshots
 <div>
   <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_login.jpg" alt="Gambar 1" width="220" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_register.jpg" alt="Gambar 2" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_home.jpg" alt="Gambar 3" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_account.jpg" alt="Gambar 4" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan_page.jpg" alt="Gambar 5" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan.jpg" alt="Gambar 6" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_gallery.jpg" alt="Gambar 7" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan_output.jpg" alt="Gambar 8" width="230" height="450" style="display: inline-block;">
-  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_detail.jpg" alt="Gambar 9" width="230" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_register.jpg" alt="Gambar 2" width="220" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_home.jpg" alt="Gambar 3" width="230" height="220" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_account.jpg" alt="Gambar 4" width="220" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan_page.jpg" alt="Gambar 5" width="220" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan.jpg" alt="Gambar 6" width="230" height="220" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_gallery.jpg" alt="Gambar 7" width="220" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_scan_output.jpg" alt="Gambar 8" width="220" height="450" style="display: inline-block;">
+  <img src="https://github.com/Team-Capstone-C23-PS207/FrontEnd_Android_Repository/blob/master/app/src/main/res/drawable/screenshots/ss_detail.jpg" alt="Gambar 9" width="220" height="450" style="display: inline-block;">
 </div>
 
 # <h2>Minimum Requirements</h2>
