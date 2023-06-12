@@ -32,3 +32,9 @@
 • APK File : https://drive.google.com/drive/folders/11RADj_PvUzqheP722pY5YVwqqQVfnAzX?usp=sharing
 
 • Mockup Design File : https://www.figma.com/file/bQZLHJaRFdddj9K9ZHWlQ1/Aplikasi-Scan-Sampah-(Team)?type=design&node-id=0%3A1&t=Mnc9yHDeJJdcCYYS-1
+
+# References
+• Retrofit2 : https://www.dicoding.com/academies/14/tutorials/19552<br>
+• OkHttp : https://www.dicoding.com/academies/14/tutorials/19552?hl=okhttp<br>
+• Firebase : https://firebase.google.com/docs/auth/android/password-auth?hl=id<br>
+• Intent Camera : https://www.dicoding.com/academies/352/tutorials/22863
